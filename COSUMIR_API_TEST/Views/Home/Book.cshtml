@@ -1,0 +1,50 @@
+﻿@model Book
+
+@{
+    ViewData["Title"] = "Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-header">
+        @ViewBag.Accion
+    </div>
+    <div class="card-body">
+
+        <form asp-action="GuardarCambios" asp-controller="Home" method="post">
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-2">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control form-control-sm" asp-for="Title" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Description</label>
+                <input type="text" class="form-control form-control-sm" asp-for="Description" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">pageCount</label>
+                <input type="text" class="form-control form-control-sm" asp-for="pageCount"/>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">excerpt</label>
+                <input type="text" class="form-control form-control-sm" asp-for="excerpt"/>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">publishDate</label>
+                <input type="text" class="form-control form-control-sm" asp-for="publishDate" />
+            </div>
+
+            <button type="submit" class="btn btn-success btn-sm">Guardar Cambios</button>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-warning btn-sm">Volver a lista</a>
+        </form>
+
+
+        
+       
+    </div>
+
+</div>
